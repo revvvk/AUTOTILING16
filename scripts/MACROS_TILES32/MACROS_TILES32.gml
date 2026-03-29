@@ -1,3 +1,18 @@
+//MACROS PRA OS VETORES DE TILES
+
+#macro VAR_WALL_FACE        0
+
+#macro VAR_FLOOR            1
+
+#macro VAR_TOP_MID_WALL     2
+ 
+
+
+
+
+
+
+
 //MACROS PARA AS POSIÇÕES (INDEX) DOS TILES NO TILESET
 
 //VAZIO DO MAPA
@@ -6,11 +21,11 @@
 //---
 
 //FACE DA PAREDE E SUAS VARIAÇÕES
-#macro WALL_FACE 9  
-#macro WALL_FACE_VAR1 50 
-#macro WALL_FACE_VAR2 51 
-#macro WALL_FACE_VAR3 52 
-#macro WALL_FACE_VAR4 53 
+#macro WALL_FACE        9  
+#macro WALL_FACE_VAR1   50 
+#macro WALL_FACE_VAR2   51 
+#macro WALL_FACE_VAR3   52 
+#macro WALL_FACE_VAR4   53 
 
 //TOTAL DE VARIAÇÕES
 #macro WALL_FACE_TILES 5
@@ -24,12 +39,20 @@
 
 //DESENHO DE UMA SALA 3X3
 #macro TOP_LEFT_CORNER      1
+
 #macro TOP_MID_WALL         2
+#macro TOP_MID_WALL_VAR1    54 
+#macro TOP_MID_WALL_VAR2    55 
+#macro TOP_MID_WALL_VAR3    56 
+#macro TOP_MID_WALL_VAR4    57 
+
 #macro TOP_RIGHT_CORNER     3
+
 
 #macro LEFT_WALL    8
 #macro FLOOR        43 
 #macro RIGHT_WALL   10 
+
 
 #macro BOT_LEFT_CORNER      15
 #macro BOT_MID_WALL         16

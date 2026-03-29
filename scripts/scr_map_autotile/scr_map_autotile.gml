@@ -1,5 +1,6 @@
 ///@description Desenha os tiles no mapa
 ///@param {array} _map Array 2D do mapa
+///@param {array} _tile_variations Array container com os arrays de variações de tiles
 ///@param {real} _map_width Largura do mapa
 ///@param {real} _map_height Altura do mapa
 function scr_map_autotile(_map, _tile_variations, _map_width, _map_height){
@@ -137,12 +138,19 @@ function scr_map_autotile(_map, _tile_variations, _map_width, _map_height){
             //posição do tile dentro da tabela
             var _tile_id = _table[_bitmask];
             
+            
+            //verificando se o tile de topo calculado pelo bitmask é o TOP_MID_WALL
+            //para aplicar suas variações apenas nele e não em todos os tiles de topo
+            if(_tile_id == TOP_MID_WALL){
+                _tile_id = _tile_variations[VAR_TOP_MID_WALL][_i][_j];
+            }
+            
             //desenhando os tiles no mapa na camada de paredes
             tilemap_set(_tilemap_walls_top, _tile_id, _i, _j - 1);
             
             
             //lendo a variação sorteada para a célula e a usa como indice do tileset
-            var _wall_face_tile = _tile_variations[_i][_j];
+            var _wall_face_tile = _tile_variations[VAR_WALL_FACE][_i][_j];
             
             //aplica os tiles de face de parede sorteados aleatóriamente
             tilemap_set(_tilemap_walls, _wall_face_tile, _i, _j);
