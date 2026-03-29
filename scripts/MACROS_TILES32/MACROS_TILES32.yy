@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"MACROS_TILES32",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"MACROS_TILES32",
+  "parent":{
+    "name":"MACROS",
+    "path":"folders/Scripts/MACROS.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
