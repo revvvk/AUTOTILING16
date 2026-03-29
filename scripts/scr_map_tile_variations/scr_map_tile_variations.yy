@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"MACROS_TILES16",
+  "%Name":"scr_map_tile_variations",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"MACROS_TILES16",
+  "name":"scr_map_tile_variations",
   "parent":{
-    "name":"OLD",
-    "path":"folders/Scripts/OLD.yy",
+    "name":"MAP",
+    "path":"folders/Scripts/MAP.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

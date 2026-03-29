@@ -5,7 +5,15 @@
 
 //---
 
+//FACE DA PAREDE E SUAS VARIAÇÕES
 #macro WALL_FACE 9  
+#macro WALL_FACE_VAR1 50 
+#macro WALL_FACE_VAR2 51 
+#macro WALL_FACE_VAR3 52 
+#macro WALL_FACE_VAR4 53 
+
+//TOTAL DE VARIAÇÕES
+#macro WALL_FACE_TILES 5
 
 //---
 

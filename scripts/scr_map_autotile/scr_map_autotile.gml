@@ -2,7 +2,7 @@
 ///@param {array} _map Array 2D do mapa
 ///@param {real} _map_width Largura do mapa
 ///@param {real} _map_height Altura do mapa
-function scr_map_autotile(_map, _map_width, _map_height){
+function scr_map_autotile(_map, _tile_variations, _map_width, _map_height){
     //CRIANDO UMA TABELA PARA AS POSIÇÕES DOS TILES
     //LOOK UP TABLE
     var _table = array_create(256, 0);
@@ -140,7 +140,16 @@ function scr_map_autotile(_map, _map_width, _map_height){
             //desenhando os tiles no mapa na camada de paredes
             tilemap_set(_tilemap_walls_top, _tile_id, _i, _j - 1);
             
-            tilemap_set(_tilemap_walls, WALL_FACE, _i, _j);
+            
+            //lendo a variação sorteada para a célula e a usa como indice do tileset
+            var _wall_face_tile = _tile_variations[_i][_j];
+            
+            //aplica os tiles de face de parede sorteados aleatóriamente
+            tilemap_set(_tilemap_walls, _wall_face_tile, _i, _j);
+            
+            
+            //aplica os tiles de face de parede
+            //tilemap_set(_tilemap_walls, WALL_FACE, _i, _j);
         }
     }
 }

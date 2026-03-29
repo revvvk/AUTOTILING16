@@ -52,6 +52,7 @@
     {"id":{"name":"scr_map_drunken_walk_structured_dungeon","path":"scripts/scr_map_drunken_walk_structured_dungeon/scr_map_drunken_walk_structured_dungeon.yy",},},
     {"id":{"name":"scr_map_drunken_walk","path":"scripts/scr_map_drunken_walk/scr_map_drunken_walk.yy",},},
     {"id":{"name":"scr_map_init","path":"scripts/scr_map_init/scr_map_init.yy",},},
+    {"id":{"name":"scr_map_tile_variations","path":"scripts/scr_map_tile_variations/scr_map_tile_variations.yy",},},
     {"id":{"name":"spr_tileset_dg","path":"sprites/spr_tileset_dg/spr_tileset_dg.yy",},},
     {"id":{"name":"spr_tileset_dungeon","path":"sprites/spr_tileset_dungeon/spr_tileset_dungeon.yy",},},
     {"id":{"name":"spr_tileset_stone_dg","path":"sprites/spr_tileset_stone_dg/spr_tileset_stone_dg.yy",},},
