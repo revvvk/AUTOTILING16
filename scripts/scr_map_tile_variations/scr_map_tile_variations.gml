@@ -23,23 +23,57 @@ function scr_map_tile_variation(_map, _map_width, _map_height){
         _var_top_mid_wall[_i] = array_create(_map_height, 0);
     }
     
+    //esse é o array com as variações de tiles da borda de baixo da parede
+    var _var_bot_mid_wall = array_create(_map_width);
+    for(var _i = 0; _i < _map_width; _i++){
+        _var_bot_mid_wall[_i] = array_create(_map_height, 0);
+    }
+    
+    //esse é o array com as variações da parede lateral esquerda
+    var _var_left_wall = array_create(_map_width);
+    for(var _i = 0; _i < _map_width; _i++){
+        _var_left_wall[_i] = array_create(_map_height, 0);
+    }
+    
+    //esse é o array com as variações da parede lateral direita
+    var _var_right_wall = array_create(_map_width);
+    for(var _i = 0; _i < _map_width; _i++){
+        _var_right_wall[_i] = array_create(_map_height);
+    }
+    
     
     //guarda os dois arrays dentro de um array principal que vai conter todos os outros arrays de variações de tiles
     //foram usadas as macros para melhor identificação do que é cada posição
     _tile_variations[VAR_WALL_FACE] = _var_wall_face;
     _tile_variations[VAR_TOP_MID_WALL] = _var_top_mid_wall;
+    _tile_variations[VAR_BOT_MID_WALL] = _var_bot_mid_wall;
+    _tile_variations[VAR_LEFT_WALL] = _var_left_wall;
     
     
     //criando um array com todas as possibilidades de variação do tile de face da parede
     //adicionando todos os índices disponíveis no tileset
     //a posição 0 é a padrão
-    var _wall_face_variations = [WALL_FACE, WALL_FACE_VAR1, WALL_FACE_VAR2, 
-                                WALL_FACE_VAR3, WALL_FACE_VAR4];
+    var _wall_face_variations       =   [WALL_FACE, WALL_FACE_VAR1, WALL_FACE_VAR2, 
+                                        WALL_FACE_VAR3, WALL_FACE_VAR4, WALL_FACE_VAR5, 
+                                        WALL_FACE_VAR6, WALL_FACE_VAR7, WALL_FACE_VAR8, 
+                                        WALL_FACE_VAR9];
     
     //array com as variações de tiles para o topo da parede
     //contendo os indices do tileset declarados por macros
-    var _top_mid_wall_variations = [TOP_MID_WALL, TOP_MID_WALL_VAR1, TOP_MID_WALL_VAR2, 
-                                    TOP_MID_WALL_VAR3, TOP_MID_WALL_VAR4];
+    var _top_mid_wall_variations    =   [TOP_MID_WALL, TOP_MID_WALL_VAR1, TOP_MID_WALL_VAR2, 
+                                        TOP_MID_WALL_VAR3, TOP_MID_WALL_VAR4, TOP_MID_WALL_VAR5,
+                                        TOP_MID_WALL_VAR6, TOP_MID_WALL_VAR7, TOP_MID_WALL_VAR8,
+                                        TOP_MID_WALL_VAR9];
+    
+    var _bot_mid_wall_variations    =   [BOT_MID_WALL, BOT_MID_WALL_VAR1, BOT_MID_WALL_VAR2, 
+                                        BOT_MID_WALL_VAR3, BOT_MID_WALL_VAR4, BOT_MID_WALL_VAR5,
+                                        BOT_MID_WALL_VAR6];
+    
+    var _left_wall_variations       =   [LEFT_WALL, LEFT_WALL_VAR1, LEFT_WALL_VAR2, 
+                                        LEFT_WALL_VAR3, LEFT_WALL_VAR4, LEFT_WALL_VAR5];
+
+    var _right_wall_variations      =   [RIGHT_WALL, RIGHT_WALL_VAR1, RIGHT_WALL_VAR2,
+                                        RIGHT_WALL_VAR3, RIGHT_WALL_VAR4, RIGHT_WALL_VAR5];
     
     
     //percorrendo os arrays 2D criados
@@ -61,6 +95,25 @@ function scr_map_tile_variation(_map, _map_width, _map_height){
                 //guardando o indice sorteado na posição da célula (i,j) dentro do vetor que está na posição 2
                 //do vetor container principal
                 _tile_variations[VAR_TOP_MID_WALL][_i][_j] = _top_mid_wall_variations[_random_top_mid_wall];
+                
+                //---
+                
+                //sorteio do indice do tile da borda de baixo
+                var _random_bot_mid_wall = irandom(array_length(_bot_mid_wall_variations) - 1);
+                //guardando o indice sorteado
+                _tile_variations[VAR_BOT_MID_WALL][_i][_j] = _bot_mid_wall_variations[_random_bot_mid_wall];
+                
+                //---
+                
+                //sorteio do indice do tile da parede esquerda
+                var _random_left_wall = irandom(array_length(_left_wall_variations) - 1);
+                _tile_variations[VAR_LEFT_WALL][_i][_j] = _left_wall_variations[_random_left_wall];
+                
+                //---
+                
+                //sorteio do indice do tile da parede direita
+                var _random_right_wall = irandom(array_length(_right_wall_variations) - 1);
+                _tile_variations[VAR_RIGHT_WALL][_i][_j] = _right_wall_variations[_random_right_wall];
                 
             }
         }

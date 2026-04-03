@@ -5,6 +5,12 @@
 #macro VAR_FLOOR            1
 
 #macro VAR_TOP_MID_WALL     2
+
+#macro VAR_BOT_MID_WALL     3
+
+#macro VAR_LEFT_WALL        4
+
+#macro VAR_RIGHT_WALL       5  
  
 
 
@@ -26,9 +32,14 @@
 #macro WALL_FACE_VAR2   51 
 #macro WALL_FACE_VAR3   52 
 #macro WALL_FACE_VAR4   53 
+#macro WALL_FACE_VAR5   54 
+#macro WALL_FACE_VAR6   55 
+#macro WALL_FACE_VAR7   56 
+#macro WALL_FACE_VAR8   57 
+#macro WALL_FACE_VAR9   58 
 
 //TOTAL DE VARIAÇÕES
-#macro WALL_FACE_TILES 5
+//#macro WALL_FACE_TILES 5
 
 //---
 
@@ -41,21 +52,48 @@
 #macro TOP_LEFT_CORNER      1
 
 #macro TOP_MID_WALL         2
-#macro TOP_MID_WALL_VAR1    54 
-#macro TOP_MID_WALL_VAR2    55 
-#macro TOP_MID_WALL_VAR3    56 
-#macro TOP_MID_WALL_VAR4    57 
+#macro TOP_MID_WALL_VAR1    59 
+#macro TOP_MID_WALL_VAR2    60 
+#macro TOP_MID_WALL_VAR3    61 
+#macro TOP_MID_WALL_VAR4    62 
+#macro TOP_MID_WALL_VAR5    63 
+#macro TOP_MID_WALL_VAR6    64 
+#macro TOP_MID_WALL_VAR7    65 
+#macro TOP_MID_WALL_VAR8    66 
+#macro TOP_MID_WALL_VAR9    67 
 
 #macro TOP_RIGHT_CORNER     3
 
 
-#macro LEFT_WALL    8
-#macro FLOOR        43 
-#macro RIGHT_WALL   10 
+
+#macro LEFT_WALL            8
+#macro LEFT_WALL_VAR1       73
+#macro LEFT_WALL_VAR2       74
+#macro LEFT_WALL_VAR3       75
+#macro LEFT_WALL_VAR4       76
+#macro LEFT_WALL_VAR5       77
+
+#macro FLOOR                43 
+
+#macro RIGHT_WALL           10
+#macro RIGHT_WALL_VAR1      68 
+#macro RIGHT_WALL_VAR2      69 
+#macro RIGHT_WALL_VAR3      70 
+#macro RIGHT_WALL_VAR4      71 
+#macro RIGHT_WALL_VAR5      72 
+
 
 
 #macro BOT_LEFT_CORNER      15
+
 #macro BOT_MID_WALL         16
+#macro BOT_MID_WALL_VAR1    78
+#macro BOT_MID_WALL_VAR2    79
+#macro BOT_MID_WALL_VAR3    80
+#macro BOT_MID_WALL_VAR4    81
+#macro BOT_MID_WALL_VAR5    82
+#macro BOT_MID_WALL_VAR6    83
+
 #macro BOT_RIGHT_CORNER     17
 
 //---
@@ -139,6 +177,13 @@
 #macro D_LEFT   45
 #macro D_RIGHT  46  
 
+
+//SOMBRAS DOS TILES
+#macro SHADOW_WALL_FACE                 84
+#macro SHADOW_TOP_RIGHT_CORNER          85
+#macro SHADOW_RIGHT_WALL                86   
+#macro SHADOW_TOP_RIGHT_INNER_CORNER    87 
+#macro SHADOW_BOT_RIGHT_INNER_CORNER    88 
 
 
 

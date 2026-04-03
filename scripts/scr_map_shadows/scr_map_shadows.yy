@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_map_shadows",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_map_shadows",
+  "parent":{
+    "name":"MAP",
+    "path":"folders/Scripts/MAP.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

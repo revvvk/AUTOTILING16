@@ -97,17 +97,24 @@ function scr_map_autotile(_map, _tile_variations, _map_width, _map_height){
     var _tilemap_walls_top  = layer_tilemap_get_id("tls_walls_top");
     
     //FORÇA O MAPA A SE DESENHAR NO TAMANHO REQUERIDO
+    //chão
     tilemap_set_width(_tilemap_floor, _map_width);
     tilemap_set_height(_tilemap_floor, _map_height);
+    
+    //paredes
     tilemap_set_width(_tilemap_walls, _map_width);
     tilemap_set_height(_tilemap_walls, _map_height);
+    
+    //topo das paredes
     tilemap_set_width(_tilemap_walls_top, _map_width);
     tilemap_set_height(_tilemap_walls_top, _map_height);
+    
     
     //limpando os tilemaps para os desenhos não se sobrescreverem
     tilemap_clear(_tilemap_floor, 0);
     tilemap_clear(_tilemap_walls, 0);
     tilemap_clear(_tilemap_walls_top, 0);
+    
     
     for(var _i = 0; _i < _map_width; _i++){
         for(var _j = 0; _j < _map_height; _j++){
@@ -143,6 +150,24 @@ function scr_map_autotile(_map, _tile_variations, _map_width, _map_height){
             //para aplicar suas variações apenas nele e não em todos os tiles de topo
             if(_tile_id == TOP_MID_WALL){
                 _tile_id = _tile_variations[VAR_TOP_MID_WALL][_i][_j];
+            }
+            
+            //verificando se o tile da borda de baixo calculado pelo bitmask é o correto
+            //para aplicar suas variações
+            if(_tile_id == BOT_MID_WALL){
+                _tile_id = _tile_variations[VAR_BOT_MID_WALL][_i][_j];
+            }
+            
+            //verificando se o tile da parede esquerda calculado pelo bitmask é o corredo
+            //para aplicar suas variações
+            if(_tile_id == LEFT_WALL){
+                _tile_id = _tile_variations[VAR_LEFT_WALL][_i][_j];
+            }
+            
+            //verificando se o tile da parede direita calculado pelo bitmask é o correto
+            //para aplicar suas variações
+            if(_tile_id == RIGHT_WALL){
+                _tile_id = _tile_variations[VAR_RIGHT_WALL][_i][_j];
             }
             
             //desenhando os tiles no mapa na camada de paredes

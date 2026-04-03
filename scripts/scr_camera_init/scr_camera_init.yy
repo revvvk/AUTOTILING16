@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_camera_init",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_camera_init",
+  "parent":{
+    "name":"CAMERA",
+    "path":"folders/Scripts/CAMERA.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

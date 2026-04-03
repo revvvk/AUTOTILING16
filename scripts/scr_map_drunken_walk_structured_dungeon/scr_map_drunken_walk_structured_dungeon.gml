@@ -49,13 +49,13 @@ function scr_map_drunken_walk_structured_dungeon(_map, _map_width, _map_height, 
     var _last_dir = -1;
     
     //passos para virar ou criar sala
-    var _steps = irandom_range(20, 25);
+    var _steps = irandom_range(30, 35);
     
     //quantos passos até virar para outra direção ou criar uma sala
     var _steps_until_turn = _steps;
     
     //chance de criar sala
-    var _room_chance = 50;
+    var _room_chance = 30;
     
     
     //enquanto não cumprir a meta de tiles de chão, continua o loop escavando
@@ -114,7 +114,6 @@ function scr_map_drunken_walk_structured_dungeon(_map, _map_width, _map_height, 
             
             _direction = _new_direction;
             _steps_until_turn = _steps;
-                    show_debug_message(_seg);
         }
     }
     //retorna o mapa gerado
