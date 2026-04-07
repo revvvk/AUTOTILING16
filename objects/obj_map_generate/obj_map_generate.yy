@@ -11,8 +11,8 @@
   "name":"obj_map_generate",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"MAP",
+    "path":"folders/Objects/MAP.yy",
   },
   "parentObjectId":null,
   "persistent":false,

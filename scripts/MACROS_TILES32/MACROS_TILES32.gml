@@ -179,11 +179,20 @@
 
 
 //SOMBRAS DOS TILES
-#macro SHADOW_WALL_FACE                 84
-#macro SHADOW_TOP_RIGHT_CORNER          85
-#macro SHADOW_RIGHT_WALL                86   
-#macro SHADOW_TOP_RIGHT_INNER_CORNER    87 
-#macro SHADOW_BOT_RIGHT_INNER_CORNER    88 
+//#macro SHADOW_WALL_FACE                 84
+//#macro SHADOW_TOP_RIGHT_CORNER          85
+//#macro SHADOW_RIGHT_WALL                86   
+//#macro SHADOW_TOP_RIGHT_INNER_CORNER    87 
+//#macro SHADOW_BOT_RIGHT_INNER_CORNER    88 
+//#macro SHADOW_2WF                       89
+
+
+#macro SHADOW_WALL_FACE                 90
+#macro SHADOW_TOP_RIGHT_CORNER          91
+#macro SHADOW_RIGHT_WALL                92   
+#macro SHADOW_TOP_RIGHT_INNER_CORNER    93 
+#macro SHADOW_BOT_RIGHT_INNER_CORNER    94 
+#macro SHADOW_2WF                       95
 
 
 

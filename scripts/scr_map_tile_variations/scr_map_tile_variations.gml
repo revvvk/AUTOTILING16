@@ -48,6 +48,7 @@ function scr_map_tile_variation(_map, _map_width, _map_height){
     _tile_variations[VAR_TOP_MID_WALL] = _var_top_mid_wall;
     _tile_variations[VAR_BOT_MID_WALL] = _var_bot_mid_wall;
     _tile_variations[VAR_LEFT_WALL] = _var_left_wall;
+    _tile_variations[VAR_RIGHT_WALL] = _var_right_wall;
     
     
     //criando um array com todas as possibilidades de variação do tile de face da parede
@@ -57,6 +58,8 @@ function scr_map_tile_variation(_map, _map_width, _map_height){
                                         WALL_FACE_VAR3, WALL_FACE_VAR4, WALL_FACE_VAR5, 
                                         WALL_FACE_VAR6, WALL_FACE_VAR7, WALL_FACE_VAR8, 
                                         WALL_FACE_VAR9];
+    //pesos para o sorteio
+    var _wall_face_weights          = [40, 30, 20, 20, 5, 20, 20, 10, 20, 5];
     
     //array com as variações de tiles para o topo da parede
     //contendo os indices do tileset declarados por macros
@@ -71,9 +74,38 @@ function scr_map_tile_variation(_map, _map_width, _map_height){
     
     var _left_wall_variations       =   [LEFT_WALL, LEFT_WALL_VAR1, LEFT_WALL_VAR2, 
                                         LEFT_WALL_VAR3, LEFT_WALL_VAR4, LEFT_WALL_VAR5];
-
+    var _left_wall_weights          = [60, 30, 10, 10, 5, 5];
+    
+    
     var _right_wall_variations      =   [RIGHT_WALL, RIGHT_WALL_VAR1, RIGHT_WALL_VAR2,
                                         RIGHT_WALL_VAR3, RIGHT_WALL_VAR4, RIGHT_WALL_VAR5];
+    var _right_wall_weights         = [60, 30, 10, 10, 5, 5];
+    
+    
+    //função que sorteia as variações de tiles com pesos
+    function choose_weighted(_tiles, _weights){
+        var _count = array_length(_tiles);
+        var _total_weight = 0;
+        
+        for(var _i = 0; _i < _count; _i++){
+            _total_weight += _weights[_i];
+        }
+        
+        var _roll = random(_total_weight);
+        var _acc = 0;
+        
+        for(var _i = 0; _i <_count; _i++){
+            _acc += _weights[_i];
+            
+            if(_roll < _acc){
+                return _tiles[_i];
+            }
+        }
+        
+        //retorno de segurança caso nenhum if seja satisfeito
+        //retorna um tile válido
+        return _tiles[_count - 1];
+    }
     
     
     //percorrendo os arrays 2D criados
@@ -83,10 +115,13 @@ function scr_map_tile_variation(_map, _map_width, _map_height){
             //verificando se a célula atual é parede
             if(_map[_i][_j] == TILE_WALL){
                 
-                //sorteando um indice entre 0 e o último elemento do array com as variações
-                var _random_wall_face = irandom(array_length(_wall_face_variations) - 1);
-                //usa o sorteio para pegar o índice real do tileset
-                _tile_variations[VAR_WALL_FACE][_i][_j] = _wall_face_variations[_random_wall_face];
+                ////sorteando um indice entre 0 e o último elemento do array com as variações
+                //var _random_wall_face = irandom(array_length(_wall_face_variations) - 1);
+                ////usa o sorteio para pegar o índice real do tileset
+                //_tile_variations[VAR_WALL_FACE][_i][_j] = _wall_face_variations[_random_wall_face];
+                
+                //usando o sorteio com pesos para definir as variações das faces de parede
+                _tile_variations[VAR_WALL_FACE][_i][_j] = choose_weighted(_wall_face_variations, _wall_face_weights);
                 
                 //---
                 
@@ -105,25 +140,25 @@ function scr_map_tile_variation(_map, _map_width, _map_height){
                 
                 //---
                 
-                //sorteio do indice do tile da parede esquerda
-                var _random_left_wall = irandom(array_length(_left_wall_variations) - 1);
-                _tile_variations[VAR_LEFT_WALL][_i][_j] = _left_wall_variations[_random_left_wall];
+                ////sorteio do indice do tile da parede esquerda
+                //var _random_left_wall = irandom(array_length(_left_wall_variations) - 1);
+                //_tile_variations[VAR_LEFT_WALL][_i][_j] = _left_wall_variations[_random_left_wall];
                 
-                //---
+                //usando o sorteio com pesos para definir as variações das paredes da lateral esquerda
+                _tile_variations[VAR_LEFT_WALL][_i][_j] = choose_weighted(_left_wall_variations, _left_wall_weights);
                 
-                //sorteio do indice do tile da parede direita
-                var _random_right_wall = irandom(array_length(_right_wall_variations) - 1);
-                _tile_variations[VAR_RIGHT_WALL][_i][_j] = _right_wall_variations[_random_right_wall];
+                ////---
                 
+                ////sorteio do indice do tile da parede direita
+                //var _random_right_wall = irandom(array_length(_right_wall_variations) - 1);
+                //_tile_variations[VAR_RIGHT_WALL][_i][_j] = _right_wall_variations[_random_right_wall];
+                
+                //usando o sorteio com pesos para definir as variações das paredes da lateral direita
+                _tile_variations[VAR_RIGHT_WALL][_i][_j] = choose_weighted(_right_wall_variations, _right_wall_weights);
             }
         }
     }
     
     //retorna o array com as variações dos tiles para quem o chamou
     return _tile_variations;
-    
-    
-    
-    
-    
 }

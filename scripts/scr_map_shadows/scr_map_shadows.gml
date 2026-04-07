@@ -34,6 +34,10 @@ function scr_map_shadows(_map, _map_width, _map_height){
                     tilemap_set(_tilemap_shadows, SHADOW_TOP_RIGHT_CORNER, _i, _j);
                 }
                 
+                else if(_north && (_i < _map_width - 1) && (_j > 0) && (_map[_i + 1][_j - 1] == TILE_FLOOR)){
+                    tilemap_set(_tilemap_shadows, SHADOW_2WF, _i, _j);
+                }
+                
                 //só parede de cima
                 else if(_north){
                     tilemap_set(_tilemap_shadows, SHADOW_WALL_FACE, _i, _j);
@@ -49,9 +53,13 @@ function scr_map_shadows(_map, _map_width, _map_height){
                     tilemap_set(_tilemap_shadows, SHADOW_TOP_RIGHT_INNER_CORNER, _i, _j);
                 }
                 
-                else if (_southeast_inner_corner){
+                else if (_southeast_inner_corner && (_j < _map_height - 1) && (_map[_i][_j + 1] == TILE_FLOOR)){
                     tilemap_set(_tilemap_shadows, SHADOW_BOT_RIGHT_INNER_CORNER, _i, _j);
                 }
+                
+                //else if(_north && ((_i < _map_width - 1) && (_j > 0) && (_map[_i + 1][ _j - 1] == TILE_FLOOR))){
+                    //tilemap_set(_tilemap_shadows, SHADOW_2WF, _i, _j);
+                //}
             }
         }
     }

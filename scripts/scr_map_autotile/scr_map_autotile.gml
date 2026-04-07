@@ -170,17 +170,29 @@ function scr_map_autotile(_map, _tile_variations, _map_width, _map_height){
                 _tile_id = _tile_variations[VAR_RIGHT_WALL][_i][_j];
             }
             
+            
             //desenhando os tiles no mapa na camada de paredes
             tilemap_set(_tilemap_walls_top, _tile_id, _i, _j - 1);
             
+            var _has_visible_face = (_j < _map_height - 1) && (_map[_i][_j + 1] == TILE_FLOOR);
             
-            //lendo a variação sorteada para a célula e a usa como indice do tileset
-            var _wall_face_tile = _tile_variations[VAR_WALL_FACE][_i][_j];
+            if(_has_visible_face){
+                //lendo a variação sorteada para a célula e a usa como indice do tileset
+                var _wall_face_tile = _tile_variations[VAR_WALL_FACE][_i][_j];
+                
+                //aplica os tiles de face de parede sorteados aleatóriamente
+                tilemap_set(_tilemap_walls, _wall_face_tile, _i, _j);
+            }
             
-            //aplica os tiles de face de parede sorteados aleatóriamente
-            tilemap_set(_tilemap_walls, _wall_face_tile, _i, _j);
-            
-            
+            ////desenhando os tiles no mapa na camada de paredes
+            //tilemap_set(_tilemap_walls_top, _tile_id, _i, _j - 1);
+            //
+            ////lendo a variação sorteada para a célula e a usa como indice do tileset
+            //var _wall_face_tile = _tile_variations[VAR_WALL_FACE][_i][_j];
+            //
+            ////aplica os tiles de face de parede sorteados aleatóriamente
+            //tilemap_set(_tilemap_walls, _wall_face_tile, _i, _j);
+            //
             //aplica os tiles de face de parede
             //tilemap_set(_tilemap_walls, WALL_FACE, _i, _j);
         }
