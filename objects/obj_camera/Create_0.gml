@@ -35,6 +35,9 @@ is_dragging = false;
 drag_x = 0;
 drag_y = 0;
 
+//variavel para camera seguir player
+follow_player = true;
+
 //configurações do zoom
 zoom_step = 0.1;
 min_cam_width = 320;

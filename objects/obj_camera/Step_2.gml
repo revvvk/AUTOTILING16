@@ -1,10 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
-//scr_camera_update();
 
 //checa quando o botão esquerdo do mouse começa a ser pressionado para arrastar o mapa
 if(mouse_check_button_pressed(mb_left)){
     is_dragging = true;
+    follow_player = false;
     
     //guardando a posição atual do mouse na gui como ponto inicial do arrasto
     drag_x = device_mouse_x_to_gui(0);
@@ -13,9 +13,10 @@ if(mouse_check_button_pressed(mb_left)){
 
 if(mouse_check_button_released(mb_left)){
     is_dragging = false;
+    follow_player = true;
 }
 
-
+//arrastando a camera
 if(is_dragging){
     //pegando a nova posição do mouse na gui
     var _mx = device_mouse_x_to_gui(0);
@@ -33,6 +34,17 @@ if(is_dragging){
     //atualiza o ponto de referencia
     drag_x = _mx;
     drag_y = _my;
+}
+
+//checa se é possível seguir o player e se a instancia do player existe
+else if(follow_player && instance_exists(obj_player)){
+    //alvo da camera
+    var _target_cam_x = obj_player.x - cam_width / 2;
+    var _target_cam_y = obj_player.y - cam_height / 2;
+    
+    //suaviza o movimento da camera
+    cam_x = lerp(cam_x, _target_cam_x, 0.1);
+    cam_y = lerp(cam_y, _target_cam_y, 0.1);
 }
 
 //zoom da camera com a roda do mouse

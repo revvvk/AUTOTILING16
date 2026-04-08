@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_map_generate",
+  "%Name":"scr_is_wall_at",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_map_generate",
+  "name":"scr_is_wall_at",
   "parent":{
-    "name":"MAP GENERATION",
-    "path":"folders/Scripts/MAP/MAP GENERATION.yy",
+    "name":"MAP COLLISION",
+    "path":"folders/Scripts/MAP/MAP COLLISION.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

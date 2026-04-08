@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_map_dig_area",
   "parent":{
-    "name":"MAP",
-    "path":"folders/Scripts/MAP.yy",
+    "name":"MAP GENERATION",
+    "path":"folders/Scripts/MAP/MAP GENERATION.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

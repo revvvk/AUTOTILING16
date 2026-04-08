@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_map_generate",
+  "%Name":"scr_enemy_spawn",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_map_generate",
+  "name":"scr_enemy_spawn",
   "parent":{
-    "name":"MAP GENERATION",
-    "path":"folders/Scripts/MAP/MAP GENERATION.yy",
+    "name":"ENEMY",
+    "path":"folders/Scripts/ENEMY.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
